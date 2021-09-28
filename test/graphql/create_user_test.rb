@@ -1,8 +1,8 @@
 require 'test_helper'
 
 class Mutations::CreateUserTest < ActiveSupport::TestCase
-  def perform(args = {})
-    Mutations::CreateUser.new(object: nil, field: nil, context: {}).resolve(args)
+  def perform(**args)
+    Mutations::CreateUser.new(object: nil, field: nil, context: {}).resolve(**args)
   end
 
   test 'create a new user' do

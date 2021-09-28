@@ -1,13 +1,13 @@
 require 'test_helper'
 
 class Mutations::CreateArticleTest < ActiveSupport::TestCase
-  def perform(user: nil, **args)
-    Mutations::CreateArticle.new(object: nil, field: nil, context: {}).resolve(args)
+  def perform(**args)
+    Mutations::CreateArticle.new(object: nil, field: nil, context: {}).resolve(**args)
   end
 
   test 'create a new article' do
     test_title = 'test title'
-    test_body = 'test body'
+    test_body = 'test body to make it not too short'
     test_status = 'public'
 
     article = perform(
