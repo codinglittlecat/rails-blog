@@ -13,6 +13,8 @@ module Mutations
         status: status,
         user: context[:current_user]
       )
+    rescue ActiveRecord::RecordInavlid => e
+      GraphQl::ExecutionError.new("Invalid input: #{e.record.erros.full_messages.join(', ')}")
     end
   end
 end
