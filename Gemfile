@@ -54,5 +54,7 @@ group :test do
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
+gem 'bcrypt', '3.1.16'
 gem 'graphiql-rails', group: :development
+gem 'rspec-rails', '5.0.2'
+gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
