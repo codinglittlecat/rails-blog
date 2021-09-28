@@ -10,15 +10,25 @@ class Resolvers::ArticlesSearch
 
   class ArticleFilter < ::Types::BaseInputObject
     argument :OR, [self], required: false
-    arguemtn :title_contains, String, required: false
+    argument :title_contains, String, required: false
     argument :body_contains, String, required: false
   end
 
   option :filter, type: ArticleFilter, with: :apply_filter
+  option :first, type: Int, with: :apply_first
+  option :skip, type: Int, with: :apply_skip
 
   def apply_filter(scope, value)
     branches = normalize_filters(value).reduce { |a, b| a.or(b) }
     scope.merge branches
+  end
+
+  def apply_first(scope, value)
+    scope.limit value
+  end
+
+  def apply_skip(scope, value)
+    scope.offset value
   end
 
   def normalize_filters(value, branches = [])

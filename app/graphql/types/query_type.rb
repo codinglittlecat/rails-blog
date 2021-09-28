@@ -20,6 +20,10 @@ module Types
       Article.all
     end
 
+    # searchArticles(skip: 1, limit: 2) {
+    #   title
+    # }
+
     field :search_articles, resolver: Resolvers::ArticlesSearch
   end
 end
