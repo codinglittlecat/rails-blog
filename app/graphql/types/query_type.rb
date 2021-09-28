@@ -19,5 +19,7 @@ module Types
     def all_articles
       Article.all
     end
+
+    field :search_articles, resolver: Resolvers::ArticlesSearch
   end
 end

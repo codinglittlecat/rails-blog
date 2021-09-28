@@ -57,4 +57,5 @@ end
 gem 'bcrypt', '3.1.16'
 gem 'graphiql-rails', group: :development
 gem 'rspec-rails', '5.0.2'
+gem 'search_object_graphql', '1.0.1'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
