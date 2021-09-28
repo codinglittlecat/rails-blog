@@ -46,5 +46,26 @@ module Types
     # }
 
     field :signin_user, mutation: Mutations::SignInUser
+
+    # mutation {
+    #   createComment(
+    #     articleId: 2,
+    #     body: "test body comment",
+    #     status: "public"
+    #   ) {
+    #     id
+    #     body
+    #     user {
+    #       name
+    #       email
+    #     }
+    #     article {
+    #       title
+    #       body
+    #     }
+    #   }
+    # }
+
+    field :create_comment, mutation: Mutations::CreateComment
   end
 end
