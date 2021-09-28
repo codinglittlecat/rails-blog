@@ -10,7 +10,8 @@ module Mutations
       Article.create!(
         title: title,
         body: body,
-        status: status
+        status: status,
+        user: context[:current_user]
       )
     end
   end
